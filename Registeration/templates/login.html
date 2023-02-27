@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    
+
+    <style>
+        body{
+            background-image: linear-gradient(to right, blue,rgb(233, 22, 177));
+        }
+
+        span{
+            font-weight: bold;
+            color: white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        form{
+            height: 200px;
+            width: 250px;
+            padding: 30px;
+            border: 2px solid rgb(246, 244, 244);
+            text-align: center;
+            margin: auto;
+            border-radius: 10px;
+            background-image: linear-gradient(to right, rgb(235, 32, 188),rgb(71, 22, 233));
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+        input{
+            padding: 6px;
+            border-radius: 6px;
+        }
+    </style>
+    <h1>Welcome to login page</h1>
+
+
+    <form action="login" method="POST">
+
+        {% csrf_token %}
+
+        <span>Enter username</span> <br><br><input type="text" name="username"><br><br>
+        <span>Enter password</span> <br><br><input type="password" name="password"><br><br>
+        <input type="submit"><br><br>
+        {% for i in messages %}
+        <h2>{{i}}</h2>
+        {% endfor %}
+
+    </form>
+
+
+</body>
+</html>
